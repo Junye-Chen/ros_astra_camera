@@ -890,6 +890,7 @@ void OBCameraNode::reconfigureCallback(const AstraConfig &config, uint32_t level
     int fps = std::stoi(arr[2]);
     video_mode.setResolution(x_resolution, y_resolution);
     video_mode.setFps(fps);
+    video_mode.setPixelFormat(openni::PIXEL_FORMAT_RGB888);
     video_modes_lookup_table_[value] = video_mode;
   }
   auto ir_mode = lookupVideoModeFromDynConfig(config.ir_mode);
